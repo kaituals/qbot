@@ -3,19 +3,19 @@ import { BotConfig } from './structures/types';
 
 export const config: BotConfig = {
     groupId: 1195803,
-    slashCommands: true,
+    slashCommands: false,
     legacyCommands: {
         enabled: true,
-        prefixes: ['!'],
+        prefixes: ['!!'],
     },
     permissions: {
-        all: ['Department Overseer'],
-        ranking: ['Rank Commander'],
-        users: ['Rank Commander'],
-        shout: ['Rank Commander'],
-        join: ['Department Overseer'],
-        signal: ['Department Overseer'],
-        admin: ['Department Overseer'],
+        all: ['1321680658179031110'],
+        ranking: ['1334360532718714910'],
+        users: ['1334360532718714910'],
+        shout: ['1334360532718714910'],
+        join: ['1321680658179031110'],
+        signal: ['1321680658179031110'],
+        admin: ['1321680658179031110'],
     },
     logChannels: {
         actions: '1334891910736646246',
@@ -24,7 +24,7 @@ export const config: BotConfig = {
     api: false,
     maximumRank: 15,
     verificationChecks: false,
-    bloxlinkGuildId: '656638781964812359',
+    bloxlinkGuildId: '',
     firedRank: 1,
     suspendedRank: 1,
     recordManualActions: true,
@@ -48,8 +48,8 @@ export const config: BotConfig = {
     activity: {
         enabled: true,
         type: ActivityType.Watching,
-        value: 'Ranking',
+        value: 'Burger Stop',
     },
     status: 'dnd',
-    deleteWallURLs: true,
+    deleteWallURLs: false,
 }
