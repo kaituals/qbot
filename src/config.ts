@@ -3,7 +3,7 @@ import { BotConfig } from './structures/types';
 
 export const config: BotConfig = {
     groupId: 1195803,
-    slashCommands: false,
+    slashCommands: true,
     legacyCommands: {
         enabled: true,
         prefixes: ['!!'],
@@ -22,9 +22,9 @@ export const config: BotConfig = {
         shout: '1334891893091336289',
     },
     api: false,
-    maximumRank: 15,
+    maximumRank: 17,
     verificationChecks: false,
-    bloxlinkGuildId: '',
+    bloxlinkGuildId: '656638781964812359',
     firedRank: 1,
     suspendedRank: 1,
     recordManualActions: true,
@@ -40,9 +40,9 @@ export const config: BotConfig = {
         roles: [],
     },
     antiAbuse: {
-        enabled: false,
-        clearDuration: 1 * 60,
-        threshold: 10,
+        enabled: true,
+        clearDuration: 3 * 60,
+        threshold: 30,
         demotionRank: 1,
     },
     activity: {
@@ -50,6 +50,6 @@ export const config: BotConfig = {
         type: ActivityType.Watching,
         value: 'Human Resources',
     },
-    status: 'idle',
+    status: 'online',
     deleteWallURLs: true,
 }
