@@ -48,8 +48,8 @@ export const config: BotConfig = {
     activity: {
         enabled: true,
         type: ActivityType.Watching,
-        value: 'Burger Stop',
+        value: 'Human Resources',
     },
-    status: 'dnd',
-    deleteWallURLs: false,
+    status: 'idle',
+    deleteWallURLs: true,
 }
