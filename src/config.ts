@@ -6,7 +6,7 @@ export const config: BotConfig = {
     slashCommands: true,
     legacyCommands: {
         enabled: true,
-        prefixes: ['!!'],
+        prefixes: ['b!'],
     },
     permissions: {
         all: ['1321680658179031110'],
@@ -22,7 +22,7 @@ export const config: BotConfig = {
         shout: '1334891893091336289',
     },
     api: false,
-    maximumRank: 17,
+    maximumRank: 15,
     verificationChecks: false,
     bloxlinkGuildId: '656638781964812359',
     firedRank: 1,
