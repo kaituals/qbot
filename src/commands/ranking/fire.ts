@@ -35,9 +35,9 @@ class FireCommand extends Command {
                 },
                 {
                     trigger: 'reason',
-                    description: 'If you would like a reason to be supplied in the logs, put it here.',
+                    description: 'Reason for firing?',
                     isLegacyFlag: true,
-                    required: false,
+                    required: true,
                     type: 'String',
                 },
             ],

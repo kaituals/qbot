@@ -25,13 +25,13 @@ class SuspendCommand extends Command {
     constructor() {
         super({
             trigger: 'suspend',
-            description: 'Temporarily fires a user.',
+            description: 'Suspends a user from their role.',
             type: 'ChatInput',
             module: 'suspensions',
             args: [
                 {
                     trigger: 'roblox-user',
-                    description: 'Who do you want to suspend?',
+                    description: 'Who would you like to suspend?',
                     autocomplete: true,
                     type: 'String',
                 },
@@ -42,9 +42,9 @@ class SuspendCommand extends Command {
                 },
                 {
                     trigger: 'reason',
-                    description: 'If you would like a reason to be supplied in the logs, put it here.',
+                    description: 'Reason for suspension?',
                     isLegacyFlag: true,
-                    required: false,
+                    required: true,
                     type: 'String',
                 },
             ],

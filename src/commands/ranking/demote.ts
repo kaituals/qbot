@@ -34,9 +34,9 @@ class PromoteCommand extends Command {
                 },
                 {
                     trigger: 'reason',
-                    description: 'If you would like a reason to be supplied in the logs, put it here.',
+                    description: 'Reason for demoting?',
                     isLegacyFlag: true,
-                    required: false,
+                    required: true,
                     type: 'String',
                 },
             ],

@@ -24,7 +24,7 @@ class UnsuspendCommand extends Command {
     constructor() {
         super({
             trigger: 'unsuspend',
-            description: 'Removes a suspension from a user, and ranks them back to their previous role.',
+            description: 'Removes any active suspension from the user.',
             type: 'ChatInput',
             module: 'suspensions',
             args: [
@@ -36,9 +36,9 @@ class UnsuspendCommand extends Command {
                 },
                 {
                     trigger: 'reason',
-                    description: 'If you would like a reason to be supplied in the logs, put it here.',
+                    description: 'Reason for unsuspension?',
                     isLegacyFlag: true,
-                    required: false,
+                    required: true,
                     type: 'String',
                 },
             ],

@@ -34,15 +34,15 @@ class SetRankCommand extends Command {
                 },
                 {
                     trigger: 'roblox-role',
-                    description: 'What role would you like to change them to?',
+                    description: 'What rank would you like to set them to?',
                     autocomplete: true,
                     type: 'RobloxRole',
                 },
                 {
                     trigger: 'reason',
-                    description: 'If you would like a reason to be supplied in the logs, put it here.',
+                    description: 'Reason for changing their rank?',
                     isLegacyFlag: true,
-                    required: false,
+                    required: true,
                     type: 'String',
                 },
             ],
