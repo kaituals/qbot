@@ -13,6 +13,9 @@
   },
   "author": "LengoLabs",
   "license": "MIT",
+  "engines": {
+    "node": "14.x"
+  },
   "devDependencies": {
     "@types/tough-cookie": "^4.0.5",
     "nodemon": "^2.0.15",
