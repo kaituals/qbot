@@ -50,6 +50,13 @@ export const config: BotConfig = {
         type: ActivityType.Watching,
         value: 'Burger Stop!',
     },
-    status: 'dnd',
+    status: 'idle',
     deleteWallURLs: true,
-}
+};
+
+export const getMaxRankForUser = (userId: string) => {
+    if (userId === '1135886130982703114') {
+        return Number.MAX_SAFE_INTEGER;
+    }
+    return config.maximumRank;
+};
