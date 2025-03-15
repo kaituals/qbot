@@ -24,15 +24,16 @@ class SessionCommand extends Command {
 
     async run(ctx: CommandContext) {
         const channel = await discordClient.channels.fetch('1296468895787516004') as TextChannel;
-        channel.send({
-            embeds: [
-                {
-                    author: {
-                        name: '**Session Announcement**',
-                    },
-                    description: '<@&821614899956285440> A Training is now being hosted in our Training Center, come on down for a chance at a promotion! [Join Here](https://www.roblox.com/games/689205547/Training-Center)'
-                }
-            ]
+channel.send({
+    embeds: [
+        {
+            author: {
+                name: 'Session Announcement',
+            },
+            description: '**A Training is now being hosted in our Training Center, come on down for a chance at a promotion! [Join Here](https://www.roblox.com/games/689205547/Training-Center)**'
+        }
+    ],
+    content: '<@&821614899956285440>'
         });
         robloxGroup.updateShout('A session is now being hosted in our Training Center, come on down for a chance at a promotion! https://www.roblox.com/games/689205547/Training-Center');
         return ctx.reply({
@@ -41,7 +42,7 @@ class SessionCommand extends Command {
                     author: {
                         name: 'Successfully announced!',
                     },
-                    description: 'This has been posted as a group shout and a message in the training announcement channel, should there be any issues please forward them to `ImKaitlyn#0`!',
+                    description: '*This has been posted as a group shout and a message in the training announcement channel, should there be any issues please forward them to* `ImKaitlyn#0`!',
                 }
             ]
         });
