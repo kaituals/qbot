@@ -23,29 +23,25 @@ class SessionCommand extends Command {
     }
 
     async run(ctx: CommandContext) {
-        const channel = await discordClient.channels.fetch('ID GOES HERE') as TextChannel;
+        const channel = await discordClient.channels.fetch('1296468895787516004') as TextChannel;
         channel.send({
             embeds: [
                 {
                     author: {
                         name: 'Session Announcement',
-                        iconURL: quoteIconUrl,
                     },
-                    description: 'YOUR DISCORD MESSAGE GOES HERE',
-                    color: mainColor,
+                    description: 'A Training is now being hosted in our Training Center, come on down for a chance at a promotion! [Join Here](https://www.roblox.com/games/689205547/Training-Center)'
                 }
             ]
         });
-        robloxGroup.updateShout('A session is now being hosted in our Training Center, come on down for a chance at a promotion! [Join Here](https://www.roblox.com/games/689205547/Training-Center)');
+        robloxGroup.updateShout('A session is now being hosted in our Training Center, come on down for a chance at a promotion! https://www.roblox.com/games/689205547/Training-Center');
         return ctx.reply({
             embeds: [
                 {
                     author: {
                         name: 'Success!',
-                        iconURL: checkIconUrl,
                     },
                     description: 'This has been posted as a group shout and a message in the session announcements channel.',
-                    color: greenColor,
                 }
             ]
         });
