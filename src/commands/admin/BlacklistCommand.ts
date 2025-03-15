@@ -1,7 +1,7 @@
 import { CommandContext } from '../../structures/addons/CommandAddons';
 import { Command } from '../../structures/Command';
 import { config } from '../../config';
-import { addToBlacklist } from '../../arguments/blacklistutils';  // Import the utility function
+import { addToBlacklist } from '../../arguments/blacklistutils';
 
 class BlacklistCommand extends Command {
     constructor() {
@@ -14,7 +14,7 @@ class BlacklistCommand extends Command {
                 {
                     trigger: 'user',
                     description: 'The user to blacklist',
-                    type: 'DiscordMentionable',  // Ensure this is set to DiscordUser type
+                    type: 'DiscordMentionable',  // Use DiscordMentionable to handle mentions
                     required: true,
                 },
             ],
@@ -22,14 +22,13 @@ class BlacklistCommand extends Command {
     }
 
     async run(ctx: CommandContext) {
-        // Get the user argument from the context
-        const user = ctx.args[0];  // This should be a DiscordUser
+        const user = ctx.args[0];  // Get the first argument, which should be the mentioned user
 
         if (!user) {
             return ctx.reply('You must mention a user to blacklist.');
         }
 
-        const executor = ctx.member; // Get the member object of the user who invoked the command
+        const executor = ctx.member;
 
         // Check if the executor has the admin role ID from the config
         const configAny: any = config;
@@ -38,9 +37,27 @@ class BlacklistCommand extends Command {
             return ctx.reply('You do not have permission to use this command.');
         }
 
-        // Add the mentioned user to the blacklist
-        addToBlacklist(user.id);  // Add user to the blacklist with the mentioned user's ID
-        await ctx.reply(`${user.username} has been blacklisted and will not be able to use the bot.`);
+        // Ensure the mentioned user is a valid GuildMember
+        try {
+            let member;
+
+            // If the mentioned object is a GuildMember or User, we fetch it correctly
+            if (user instanceof ctx.guild.members.constructor) {
+                member = user; // Already a valid GuildMember, we can use it directly
+            } else {
+                member = await ctx.guild.members.fetch(user.id);  // Fetch the member using their ID
+            }
+
+            if (!member) {
+                return ctx.reply('Could not find the mentioned user.');
+            }
+
+            // Now safely blacklist the user
+            addToBlacklist(member.id);
+            await ctx.reply(`${member.user.username} has been blacklisted and will not be able to use the bot.`);
+        } catch (error) {
+            return ctx.reply('An error occurred while trying to blacklist the user.');
+        }
     }
 }
 
