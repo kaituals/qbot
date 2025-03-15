@@ -3,10 +3,10 @@ import { BotConfig } from './structures/types';
 
 export const config: BotConfig = {
     groupId: 1195803,
-    slashCommands: true,
+    slashCommands: false,
     legacyCommands: {
         enabled: true,
-        prefixes: ['b!'],
+        prefixes: ['!!'],
     },
     permissions: {
         all: ['1135886130982703114'],
@@ -21,9 +21,9 @@ export const config: BotConfig = {
         actions: '1334891910736646246',
         shout: '1334891893091336289',
     },
-    api: false,
+    api: true,
     maximumRank: 15,
-    verificationChecks: false,
+    verificationChecks: true,
     bloxlinkGuildId: '656638781964812359',
     firedRank: 1,
     suspendedRank: 1,
@@ -50,7 +50,7 @@ export const config: BotConfig = {
         type: ActivityType.Watching,
         value: 'Burger Stop!',
     },
-    status: 'idle',
+    status: 'online',
     deleteWallURLs: true,
 };
 
