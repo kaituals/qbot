@@ -1,0 +1,7 @@
+{
+    "build": "npm run build",
+    "start": "npm run start",
+    "type": "node",
+    "node": "14.x"
+  }
+  
