@@ -3,7 +3,7 @@ import { BotConfig } from './structures/types';
 
 export const config: BotConfig = {
     groupId: 1195803,
-    slashCommands: false,
+    slashCommands: true,
     legacyCommands: {
         enabled: true,
         prefixes: ['!!'],
