@@ -14,7 +14,7 @@ class BlacklistCommand extends Command {
                 {
                     trigger: 'user',
                     description: 'The user to blacklist',
-                    type: 'DiscordUser',  // Ensure this is set to DiscordUser type
+                    type: 'DiscordMentionable',  // Ensure this is set to DiscordUser type
                     required: true,
                 },
             ],
