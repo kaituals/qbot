@@ -1,7 +1,0 @@
-{
-    "build": "npm run build",
-    "start": "npm run start",
-    "type": "node",
-    "node": "20.x",
-    "install": "npm install"
-  }
