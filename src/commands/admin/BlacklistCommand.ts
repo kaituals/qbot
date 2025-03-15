@@ -1,8 +1,7 @@
 import { CommandContext } from '../../structures/addons/CommandAddons';
 import { Command } from '../../structures/Command';
 import { config } from '../../config';
-
-const blacklistedUsers: string[] = [];  // This array will hold blacklisted user IDs (in-memory)
+import { addToBlacklist } from '../../arguments/blacklistutils';  // Import the utility function
 
 class BlacklistCommand extends Command {
     constructor() {
@@ -39,12 +38,8 @@ class BlacklistCommand extends Command {
         }
 
         // Add the user to the blacklist
-        if (!blacklistedUsers.includes(user.id)) {
-            blacklistedUsers.push(user.id);  // Add the user to the blacklist
-            await ctx.reply(`${user.username} has been blacklisted and will not be able to use the bot.`);
-        } else {
-            await ctx.reply(`${user.username} is already blacklisted.`);
-        }
+        addToBlacklist(user.id);
+        await ctx.reply(`${user.username} has been blacklisted and will not be able to use the bot.`);
     }
 }
 
