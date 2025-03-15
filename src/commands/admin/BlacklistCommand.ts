@@ -14,7 +14,7 @@ class BlacklistCommand extends Command {
                 {
                     trigger: 'user',
                     description: 'The user to blacklist',
-                    type: 'DiscordUser',
+                    type: 'DiscordUser',  // Ensure this is set to DiscordUser type
                     required: true,
                 },
             ],
@@ -22,7 +22,8 @@ class BlacklistCommand extends Command {
     }
 
     async run(ctx: CommandContext) {
-        const user = ctx.args[0];
+        // Get the user argument from the context
+        const user = ctx.args[0];  // This should be a DiscordUser
 
         if (!user) {
             return ctx.reply('You must mention a user to blacklist.');
@@ -37,8 +38,8 @@ class BlacklistCommand extends Command {
             return ctx.reply('You do not have permission to use this command.');
         }
 
-        // Add the user to the blacklist
-        addToBlacklist(user.id);
+        // Add the mentioned user to the blacklist
+        addToBlacklist(user.id);  // Add user to the blacklist with the mentioned user's ID
         await ctx.reply(`${user.username} has been blacklisted and will not be able to use the bot.`);
     }
 }
